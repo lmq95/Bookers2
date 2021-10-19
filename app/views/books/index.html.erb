@@ -10,16 +10,16 @@
       <tr></tr>
       <tr>
         <th>name</th>
-        <th>name</th>
+        <th><%= current_user.name %></th>
       </tr>
       <tr>
         <th>introduction</th>
-        <th>introduction</th>
+        <th><%= current_user.introduction %></th>
       </tr>
     </tbody>
   </table>
-  
-  <%= link_to "プロフィール編集", edit_user_path(@books) %>
+
+    <p><%= link_to "プロフィール編集", edit_user_path(current_user) %></p>
 
 <h2>New Book</h2>
 <%= form_with model:@book, class: 'new_book', local:true do |f| %>
@@ -35,5 +35,3 @@
       <%= f.submit 'Create Book' %>
     </div>
   <% end %>
-  
- 
