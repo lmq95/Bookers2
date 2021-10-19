@@ -1,2 +1,11 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+
+
+<tbody>
+  <tr>
+    <td>
+      <%= link_to @book.title, book_path(@book), class: "show_#{@book.id}" %>
+    </td>
+    <td><%= @book.body %></td>
+
+  </tr>
+</tbody>

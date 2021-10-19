@@ -1,12 +1,25 @@
-<body>
+<main>
   <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
 　<% end %>
 
 
 <h2>User info</h2>
-
-
+  <table>
+    <tbody>
+      <tr></tr>
+      <tr>
+        <th>name</th>
+        <th>name</th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th>introduction</th>
+      </tr>
+    </tbody>
+  </table>
+  
+  <%= link_to "プロフィール編集", edit_user_path(@books) %>
 
 <h2>New Book</h2>
 <%= form_with model:@book, class: 'new_book', local:true do |f| %>
@@ -22,4 +35,5 @@
       <%= f.submit 'Create Book' %>
     </div>
   <% end %>
-</body>
+  
+ 
