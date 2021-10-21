@@ -2,26 +2,19 @@
    <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
 　<% end %> 
-
-<h2>New Book</h2>
-<%= form_with model:book, class: 'new_book', local:true do |f| %>
-    <div class="field">
-      <label for="book_title">Title</label>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <label for="book_body">Body</label>
-      <%= f.text_area :body %>
-    </div>
-    <div class="actions">
-      <%= f.submit 'Create Book' %>
-    </div>
-  <% end %>
-
+　
+<%= render 'books/list', book: @newbook %>
 
 <h2>Book detail</h2>
 <tbody>
   <tr>
+    <td>
+      <%= link_to user_path(@user.id) do %>
+      <%=  attachment_image_tag @book.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %>
+      <% end %>
+      <br>
+      <%= link_to @user.name, user_path(@user.id) %>
+    </td>
     <td>
       <%= link_to @book.title, book_path(@book), class: "show_#{@book.id}" %>
     </td>
@@ -34,3 +27,4 @@
     </td>
   </tr>
 </tbody>
+</main>
