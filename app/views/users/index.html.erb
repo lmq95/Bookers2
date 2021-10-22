@@ -1,32 +1,27 @@
+<p id="notice"><%= flash[:notice] %></p>
 
-   <% if @book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
-      <ul>
-        <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
-    </div>
-  <% end %>
 <%= render 'books/list', book: @book %>
 
 <div class="col-md-8 offset-md-1">
-
-  <table>
-   <thead>
-      <tr>
-        <th>image</th>
-        <th>name</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
+    <h2>Users</h2>
+    <table class="table table-hover table-inverse">
+      <thead>
         <tr>
-          <td><%= attachment_image_tag user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></td>
-          <td><%= user.name %></td>
-          <td><%= link_to "Show", user_path(user.id) %></td>
-     <% end %>
-    </tbody>
-  </table>
+          <th>image</th>
+          <th>name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= attachment_image_tag user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></td>
+            <td><%= user.name %></td>
+            <td><%= link_to "Show", user_path(user.id) %></td>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+</div>
+</div>
+ 
