@@ -15,7 +15,7 @@
 
     <p><%= link_to "プロフィール編集", edit_user_path(current_user) %></p>
 
-<h2>New Book</h2>
+<h2>New book</h2>
 <%= form_with model:book, class: 'new_book', local:true do |f| %>
     <div class="field">
       <label for="book_title">Title</label>
