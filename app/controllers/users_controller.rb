@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
-    @user = User.new
     @books = Book.all
     @book = Book.new
   end
