@@ -1,4 +1,4 @@
- <main>
+
    <% if @book.errors.any? %>
     <div id="error_explanation">
       <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
@@ -9,7 +9,9 @@
     </ul>
     </div>
   <% end %>
-  <%= render 'books/list', book: @book %>
+<%= render 'books/list', book: @book %>
+
+<div class="col-md-8 offset-md-1">
 
   <table>
    <thead>

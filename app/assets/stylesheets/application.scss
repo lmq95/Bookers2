@@ -17,6 +17,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -28,7 +30,7 @@ body {
     background-color: #fff;
 }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, figcaption, figure, footer, header, hgroup, .main, nav, section {
     display: block;
 }
 
@@ -46,6 +48,21 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     margin-left: -15px;
 }
 
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+.table th, .table td {
+    padding: 12px;
+    border-top: 1px solid #dee2e6;
+}
+.form-control-file, .form-control-range {
+    display: block;
+    width: 100%;
+}
+
+
 .btn-success {
     color: #fff;
     background-color: #28a745;
@@ -60,3 +77,15 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 div.field, div.actions {
     margin-bottom: 10px;
 }
+
+
+
+
+#notice {
+    color: green;
+}
+
+#error_explanation {
+    color: red;
+}
+
