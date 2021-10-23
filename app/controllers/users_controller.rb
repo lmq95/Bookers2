@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_current_user, {only: [:edit, :update]}
+  before_action :ensure_current_user, {only: [:edit]}
+  
   def ensure_current_user
-    if current_user.id != params[:id].to_i
+    @user = User.find(params[:id])
+    unless @user == current_user
        redirect_to user_path(current_user.id)
     end
-  end
+  end  
   
   def index
     @users = User.all
