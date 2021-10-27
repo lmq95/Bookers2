@@ -90,7 +90,9 @@ div.field, div.actions {
 .favorites{
    color: red; 
 }
-
+div span{
+    display: inline-block;
+}
 
 #notice {
     color: green;
