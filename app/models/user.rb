@@ -33,7 +33,7 @@ class User < ApplicationRecord
     followings.include?(user)
   end
   
-  
+
 
    attachment :profile_image
 
