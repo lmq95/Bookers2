@@ -47,7 +47,7 @@ class BooksController < ApplicationController
 
   def destroy
     book = Book.find(params[:id])
-  .user_id = current_user.id
+    book.user_id = current_user.id
     book.destroy
     flash[:notice] = "Book was successfully destroyed."
     redirect_to books_path

@@ -35,9 +35,9 @@
             </tr>
           </tbody>
         </table>
-
-        <%= render 'book_comments/comment', book: @book, book_comment: @book_comment %>
-
+        <div id="comments">
+          <%= render 'book_comments/comment', book: @book, book_comment: @book_comment %>
+        <div>
     </div>
   </div>
 </div>
