@@ -13,15 +13,16 @@ def create
 end
 
 def destroy
-  @book = Book.find(params[:book_id])
-  BookComment.find_by(id: params[:id]).destroy
-　render :inde
+  BookComment.find_by(id: params[:id]).destroy  
+　@book = Book.find(params[:book_id])
+　render :index
 end
 
  private
 
   def book_comment_params
     params.require(:book_comment).permit(:comment)
+
   end
 
 end
