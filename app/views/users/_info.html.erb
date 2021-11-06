@@ -29,9 +29,9 @@
       <% else %>
     <p>
       <% if current_user.following?(user) %>
-        <%= link_to "Remove", user_relationships_path(user.id), method: :delete, class: "btn btn-remove" %>
+        <%= link_to " Remove", user_relationships_path(user.id), method: :delete, class: "btn btn-remove fas fa-user-minus" %>
       <% else %>
-        <%= link_to "Fo", user_relationships_path(user.id), method: :post, class: "btn btn-success" %>
+        <%= link_to " Follow", user_relationships_path(user.id), method: :post, class: "btn btn-success fas fa-user-plus" %>
       <% end %>
     </p>
   <% end %>
