@@ -5,17 +5,13 @@ def create
   @book_comment = BookComment.new(book_comment_params)
   @book_comment.book_id = @book.id
   @book_comment.user_id = current_user.id
-  if @book_comment.save
-     render :index
-  else
-     render 'books/show'
-  end
+  @book_comment.save
 end
 
 def destroy
-  BookComment.find_by(id: params[:id]).destroy  
-　@book = Book.find(params[:book_id])
-　render :index
+  BookComment.find_by(id: params[:id], book_id: params[:book_id]).destroy
+  @book = Book.find(params[:book_id])
+  @book_comment = BookComment.new
 end
 
  private
