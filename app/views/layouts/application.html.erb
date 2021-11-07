@@ -10,12 +10,13 @@
   </head>
 
   <body>
-    <header>
-      <%= render 'layouts/nav' %>
-      <center><%= render 'layouts/search' %></center>
-    </header>
-
+    <%= render 'layouts/header' %>
     <main>
+      <center>
+      <% if user_signed_in? %>
+        <%= render 'layouts/search' %>
+      <% end %>
+      </center>
       <p id="notice"><%= flash[:notice] %></p>
       <%= yield %>
     </main>
