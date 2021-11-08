@@ -7,18 +7,18 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :book_comments, dependent: :destroy
-
-
+  has_many :group_users
+  has_many :groups, through: :group_users
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   # ① フォローしている人取得(Userのfollowerから見た関係)
   has_many :followings, through: :relationships, source: :followed
   # 自分がフォローしている人
-
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   # ② フォローされている人取得(Userのfolowedから見た関係)
   has_many :followers, through: :reverse_of_relationships, source: :follower
   # 自分をフォローしている人(自分がフォローされている人)
-
+  
+  attachment :profile_image
   # ユーザーをフォローする
   def follow(user_id)
     relationships.create(followed_id: user_id)
@@ -47,9 +47,6 @@ class User < ApplicationRecord
       @user = User.all
     end
   end
-
-
-   attachment :profile_image
 
    validates :name, uniqueness: true, length: { minimum: 2, maximum: 20 }
    validates :introduction, length: { maximum: 50 }
