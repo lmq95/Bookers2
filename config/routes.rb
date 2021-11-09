@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/home/about' => 'homes#about', as: 'about'
   devise_for :users
-  post '/users/:id' => 'users#create'
 
   get 'search' => "searches#search", as: "search"
 
@@ -17,7 +16,8 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
   end
 
-  resources :groups, except: [:destroy]
-
+  resources :groups do
+    get 'join' => "groups#join", as: 'join'
+  end
 
  end

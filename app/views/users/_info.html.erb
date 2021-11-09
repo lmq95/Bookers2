@@ -21,17 +21,14 @@
     </tbody>
   </table>
 
-
+  <p>
   <% if user.id == current_user.id %>
-    <p>
       <%= link_to "", edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
-    </p>
-      <% else %>
-    <p>
+  <% else %>
       <% if current_user.following?(user) %>
         <%= link_to " Remove", user_relationships_path(user.id), method: :delete, class: "btn btn-remove fas fa-user-minus" %>
       <% else %>
         <%= link_to " Follow", user_relationships_path(user.id), method: :post, class: "btn btn-success fas fa-user-plus" %>
       <% end %>
-    </p>
   <% end %>
+  </p>
